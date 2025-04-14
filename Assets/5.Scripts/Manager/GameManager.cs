@@ -10,8 +10,8 @@ public class GameManager : MonoBehaviour
     #region Private 변수
     #endregion
     #region Public 변수
-    public int stageCount; // 현재 스테이지 번호
-    public event Action OnStageStart; // 스테이지 시작 이벤트
+    public Action OnZombieHit; // 좀비가 충돌할 때 호출되는 이벤트
+
     #endregion
     private void Awake()
     {
@@ -25,15 +25,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        stageCount = 1; // 초기 스테이지 번호 설정
-    }
     /// <summary>
-    /// 스테이지 시작시 이벤트 호출
+    /// 외부에서 좀비가 충돌했을 때 호출하는 함수
     /// </summary>
-    public void StageStart()
+    public void ZombieHit()
     {
-        OnStageStart?.Invoke();
+        OnZombieHit?.Invoke(); 
     }
+
+
 }

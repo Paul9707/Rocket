@@ -6,11 +6,15 @@ TagManager:
   tags:
   - Hero
   - Zombie
+  - Lane1
+  - Lane2
+  - Lane3
+  - Ground
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - Lane1

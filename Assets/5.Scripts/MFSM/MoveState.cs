@@ -8,7 +8,7 @@ public class MoveState : BaseState
 
     #region Private 변수
     private Animator anim; // zombie의 애니메이터
-    private Vector3 moveInput = new Vector3(1, 0, 0);// 이동 입력값
+    private Vector3 moveInput = new Vector3(-1, 0, 0); // 이동 입력값
     #endregion
 
     public override void OnStateEnter()
@@ -27,7 +27,7 @@ public class MoveState : BaseState
 
     public override void OnStateExit()
     {
-      
+
     }
 
     /// <summary>
@@ -35,7 +35,8 @@ public class MoveState : BaseState
     /// </summary>
     private void ZombieMove()
     {
-        zombie.transform.position -= moveInput * zombie.moveSpeed * Time.deltaTime;
+        zombie.transform.position += moveInput * zombie.moveSpeed * Time.deltaTime;
+
     }
 }
 
